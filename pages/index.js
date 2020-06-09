@@ -1,17 +1,15 @@
 import Nav from '../components/Nav'
 import react from 'react';
 const IndexPage = () => {
-  const [envs,setenv]=React.useState();
-  console.log(envs);
-  React.useEffect(()=>{
-    setenv(`${process.env.EXAMPLE_KEY}`)
-  },[])
- 
+  const [inputs,setInputs]=React.useState(`${process.env.NEXT_PUBLIC_API_KEY}`);
+  
+
   return(
   <>
     <Nav />
-    <div> {envs}</div>
-    
+    <div> {inputs}</div>
+    <div>{process.env.NEXT_PUBLIC_API_KEY}</div>
+    <input aria-label="testing input"  value={inputs} onChange={(event)=>setInputs(event.target.value)}/>
     <p>Hello, I'm the index page</p>
   </>
   )

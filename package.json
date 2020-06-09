@@ -4,10 +4,12 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:staging": "env-cmd -f .env.staging yarn build"
   },
-  "author": "Remy Sharp <remy@leftlogic.com>",
+  "author": "Manikanta",
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "next": "latest",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
