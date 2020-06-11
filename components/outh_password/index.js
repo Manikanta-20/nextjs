@@ -5,29 +5,14 @@ export const Password=()=>{
 
     const [login,setLogin]=React.useState('');
     const[pwd,setPwd]=React.useState('');
-    const options = {
-        method: 'POST',
-        headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        data:{ 
-        grant_type: 'password',
-        username:login,
-        password:login,
-        scope:'read_profile'
-    },
-        url: 'http://localhost:9090/oauth/token',
-        auth: {
-            username: 'clientapp',
-            password: '123456'
-         }
-      };
       const data=qs.stringify({ grant_type: 'password',
       username:login,
-      password:login,
+      password:pwd,
       scope:'read_profile'
    })
     const onClickSubmit= (event)=>{
 
-       axios.post('http://3.22.117.30:9090/oauth/token',
+       axios.post('http://localhost:9090/oauth/token',
        data,
     {
         headers: {
