@@ -5,7 +5,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "build:staging": "env-cmd -f .env.staging yarn build"
+    "build:staging": "env-cmd -f .env.staging yarn build",
+    "build:stage": "env-cmd -f environments/.env.staging yarn build",
+    "dev:next": "env-cmd -f environments/.env.staging next",
+    "build:prod": "env-cmd -f environments/.env.production yarn build"
   },
   "author": "Manikanta",
   "dependencies": {
